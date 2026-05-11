@@ -1,0 +1,24 @@
+<Project>
+    <!-- Versions par défaut -->
+    <PropertyGroup>
+        <DefaultTargetFramework>net10.0</DefaultTargetFramework>
+        <AspNetNugetVersion>10.*</AspNetNugetVersion>
+        <NpgsqlNugetVersion>10.*</NpgsqlNugetVersion>
+        <OpenTelemetryNugetVersion>1.15.*</OpenTelemetryNugetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>$(DefaultTargetFramework)</TargetFramework>
+        <UserSecretsId>7757ba68-f710-4d09-bb59-7c46f6396b9e</UserSecretsId>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" />
+    </ItemGroup>
+</Project>

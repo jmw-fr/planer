@@ -13,4 +13,8 @@
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql" Version="*" />
+  </ItemGroup>
+
 </Project>

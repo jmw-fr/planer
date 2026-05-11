@@ -10,7 +10,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PlanerSport.Api\PlanerSport.Api.csproj" />
+    <ProjectReference Include="..\PlanerSport.MigrationService\PlanerSport.MigrationService.csproj" />
     <ProjectReference Include="..\PlanerSport.Web\PlanerSport.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="*" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.PostgreSQL.Extensions" Version="*" />
   </ItemGroup>
 
 </Project>

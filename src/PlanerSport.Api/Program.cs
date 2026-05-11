@@ -1,3 +1,5 @@
+// Copyright (c) WEEGER. GNU General Public License (GPL), version 3.
+
 using PlanerSport.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
