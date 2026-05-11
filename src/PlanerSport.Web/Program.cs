@@ -1,6 +1,10 @@
 // Copyright (c) WEEGER. GNU General Public License (GPL), version 3.
 
+using Microsoft.AspNetCore.Identity;
+using PlanerSport.Domain;
+using PlanerSport.Infrastructure.Data;
 using PlanerSport.Web.Components;
+using PlanerSport.Web.Components.Account;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,15 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddIdentityCore<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Stores.SchemaVersion = IdentitySchemaVersions.Version3;
+})
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddSignInManager()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -32,4 +45,7 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
-app.Run();
+// Add additional endpoints required by the Identity /Account Razor components.
+app.MapAdditionalIdentityEndpoints();
+
+await app.RunAsync();

@@ -19,4 +19,4 @@ builder.AddProject<Projects.PlanerSport_Web>("planersport-web")
     .WithReference(postgresdb)
     .WaitForCompletion(migration);
 
-builder.Build().Run();
+await builder.Build().RunAsync();

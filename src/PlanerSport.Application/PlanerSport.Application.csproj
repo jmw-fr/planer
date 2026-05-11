@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PlanerSport.Abstractions\PlanerSport.Abstractions.csproj" />
     <ProjectReference Include="..\PlanerSport.Domain\PlanerSport.Domain.csproj" />
     <ProjectReference Include="..\PlanerSport.Dto\PlanerSport.Dto.csproj" />
