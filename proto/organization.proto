@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package planersport.organization;
+
+service OrganizationService {
+  rpc GetOrganization(GetOrganizationRequest) returns (OrganizationResponse);
+}
+
+message GetOrganizationRequest {
+  int32 id = 1;
+}
+
+message OrganizationResponse {
+  int32 id = 1;
+  string name = 2;
+}

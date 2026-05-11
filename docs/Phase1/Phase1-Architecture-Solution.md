@@ -7,8 +7,8 @@ Documenter les choix architecturaux et structuraux de la solution .NET pour Phas
 
 ```
 src/
-├── PlanerSport.sln
-├── PlanerSport.Api/              # gRPC services + Blazor Server
+├── PlanerSport.slnx
+├── PlanerSport.Api/              # gRPC services
 ├── PlanerSport.Application/      # Logique métier et services
 ├── PlanerSport.Domain/           # Entités métier et règles
 ├── PlanerSport.Infrastructure/   # EF Core, PostgreSQL, repositories

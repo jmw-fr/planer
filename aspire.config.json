@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "src/PlanerSport.AppHost/PlanerSport.AppHost.csproj"
+  }
+}

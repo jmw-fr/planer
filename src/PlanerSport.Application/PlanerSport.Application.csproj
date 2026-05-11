@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlanerSport.Abstractions\PlanerSport.Abstractions.csproj" />
+    <ProjectReference Include="..\PlanerSport.Domain\PlanerSport.Domain.csproj" />
+    <ProjectReference Include="..\PlanerSport.Dto\PlanerSport.Dto.csproj" />
+    <ProjectReference Include="..\PlanerSport.Grpc\PlanerSport.Grpc.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

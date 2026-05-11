@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package planersport.exercise;
+
+service ExerciseService {
+  rpc GetExercise(GetExerciseRequest) returns (ExerciseResponse);
+}
+
+message GetExerciseRequest {
+  int32 id = 1;
+}
+
+message ExerciseResponse {
+  int32 id = 1;
+  string name = 2;
+}

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.64.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlanerSport.Abstractions\PlanerSport.Abstractions.csproj" />
+    <ProjectReference Include="..\PlanerSport.Application\PlanerSport.Application.csproj" />
+    <ProjectReference Include="..\PlanerSport.Dto\PlanerSport.Dto.csproj" />
+    <ProjectReference Include="..\PlanerSport.Grpc\PlanerSport.Grpc.csproj" />
+    <ProjectReference Include="..\PlanerSport.ServiceDefaults\PlanerSport.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

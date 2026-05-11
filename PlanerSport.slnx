@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/tests/">
+  <Project Path="tests/PlanerSport.Api.Tests/PlanerSport.Api.Tests.csproj" />
+  <Project Path="tests/PlanerSport.Application.Tests/PlanerSport.Application.Tests.csproj" />
+  </Folder>
+  <Folder Name="/proto/">
+    <File Path="proto/exercise.proto" />
+    <File Path="proto/organization.proto" />
+    <File Path="proto/session.proto" />
+    <File Path="proto/user.proto" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/PlanerSport.Api/PlanerSport.Api.csproj" />
+    <Project Path="src/PlanerSport.Abstractions/PlanerSport.Abstractions.csproj" />
+    <Project Path="src/PlanerSport.AppHost/PlanerSport.AppHost.csproj" Id="e825aa16-361d-47ff-bdd6-bb9eae2b590b" />
+    <Project Path="src/PlanerSport.Application/PlanerSport.Application.csproj" />
+    <Project Path="src/PlanerSport.Domain/PlanerSport.Domain.csproj" />
+    <Project Path="src/PlanerSport.Dto/PlanerSport.Dto.csproj" />
+    <Project Path="src/PlanerSport.Grpc/PlanerSport.Grpc.csproj" />
+    <Project Path="src/PlanerSport.Infrastructure/PlanerSport.Infrastructure.csproj" />
+    <Project Path="src/PlanerSport.ServiceDefaults/PlanerSport.ServiceDefaults.csproj" />
+    <Project Path="src/PlanerSport.Web/PlanerSport.Web.csproj" />
+  </Folder>
+</Solution>

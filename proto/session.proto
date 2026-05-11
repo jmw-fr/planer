@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package planersport.session;
+
+service SessionService {
+  rpc GetSession(GetSessionRequest) returns (SessionResponse);
+}
+
+message GetSessionRequest {
+  int32 id = 1;
+}
+
+message SessionResponse {
+  int32 id = 1;
+  string name = 2;
+}
