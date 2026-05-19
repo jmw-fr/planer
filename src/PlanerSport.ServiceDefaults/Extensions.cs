@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
-using PlanerSport.Infrastructure.Data;
+using PlanerSport.Infrastructure;
 
 /// <summary>
 /// Adds common Aspire services: service discovery, resilience, health checks, and OpenTelemetry.

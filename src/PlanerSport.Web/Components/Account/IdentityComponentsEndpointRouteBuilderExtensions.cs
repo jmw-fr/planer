@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using PlanerSport.Domain;
+using PlanerSport.Core.ApplicationUserAggregate;
 using PlanerSport.Web.Components.Account.Pages;
 using PlanerSport.Web.Components.Account.Pages.Manage;
 

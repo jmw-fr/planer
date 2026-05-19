@@ -1,10 +1,10 @@
 ﻿// Copyright (c) WEEGER. GNU General Public License (GPL), version 3.
 
-namespace PlanerSport.Infrastructure.Data;
+namespace PlanerSport.Infrastructure;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PlanerSport.Domain;
+using PlanerSport.Core.ApplicationUserAggregate;
 
 /// <summary>
 /// EF Core database context for the application, inheriting from IdentityDbContext to include ASP.NET Core Identity features.

@@ -4,7 +4,7 @@ namespace PlanerSport.Web.Components.Account;
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
-using PlanerSport.Domain;
+using PlanerSport.Core.ApplicationUserAggregate;
 
 /// <summary>
 /// Identity redirect manager.

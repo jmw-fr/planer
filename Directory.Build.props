@@ -9,9 +9,9 @@
 
     <PropertyGroup>
         <TargetFramework>$(DefaultTargetFramework)</TargetFramework>
-        <UserSecretsId>7757ba68-f710-4d09-bb59-7c46f6396b9e</UserSecretsId>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+        <UserSecretsId>178d6264-543f-4175-af83-94b88ff07ec7</UserSecretsId>
     </PropertyGroup>
 
     <PropertyGroup>

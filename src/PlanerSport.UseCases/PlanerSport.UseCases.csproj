@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.7" />
+    <ProjectReference Include="..\PlanerSport.Core\PlanerSport.Core.csproj" />
   </ItemGroup>
 
 </Project>

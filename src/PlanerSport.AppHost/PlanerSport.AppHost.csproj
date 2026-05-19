@@ -5,12 +5,10 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>178d6264-543f-4175-af83-94b88ff07ec7</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PlanerSport.Api\PlanerSport.Api.csproj" />
-    <ProjectReference Include="..\PlanerSport.MigrationService\PlanerSport.MigrationService.csproj" />
     <ProjectReference Include="..\PlanerSport.Web\PlanerSport.Web.csproj" />
   </ItemGroup>
 
