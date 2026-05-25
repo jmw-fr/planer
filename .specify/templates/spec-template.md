@@ -8,6 +8,8 @@
 
 **Input**: User description: "$ARGUMENTS"
 
+> **Language Requirement**: All narrative content in this specification MUST be written in French. This includes user stories, acceptance scenarios, requirements, success criteria, assumptions, and edge cases. Technical identifiers (class names, method names, file paths, gRPC service names) remain in English.
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--

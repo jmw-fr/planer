@@ -1,21 +1,16 @@
 <!--
-Version change: none → 1.0.0
+Version change: 1.0.0 → 1.1.0
 Modified principles:
-- Placeholder 1 → User Value First
-- Placeholder 2 → Incremental Quality
-- Placeholder 3 → Data Integrity & Privacy
-- Placeholder 4 → Observability & Operational Resilience
-- Placeholder 5 → Iteration Within Constraints
+- None renamed
 Added sections:
-- Additional Constraints
-- Development Workflow
+- Language & Documentation → French-Language Specifications (new principle)
 Removed sections:
 - None
 Templates reviewed:
-- .specify/templates/plan-template.md ✅
-- .specify/templates/spec-template.md ✅
-- .specify/templates/tasks-template.md ✅
-- .specify/templates/constitution-template.md ✅
+- .specify/templates/plan-template.md ✅ (no changes needed)
+- .specify/templates/spec-template.md ✅ (added French-language requirement note)
+- .specify/templates/tasks-template.md ✅ (no changes needed)
+- .specify/templates/constitution-template.md ✅ (no changes needed)
 Follow-up TODOs:
 - None
 -->
@@ -38,6 +33,11 @@ Production and development systems MUST provide clear visibility into failures, 
 ### Iteration Within Constraints
 The team MUST choose the simplest viable solution that meets requirements, respect the existing .NET architecture, and avoid introducing unrelated platform or framework risk. Scope decisions are governed by practical trade-offs, not by feature wish lists.
 
+## Language & Documentation
+
+### French-Language Specifications
+All feature specifications (spec.md) MUST be written in French. This includes user stories, acceptance scenarios, requirements, success criteria, and all narrative sections. Technical identifiers (class names, method names, file paths, gRPC service names) remain in English. This rule ensures domain alignment with the Francophone user base and product documentation. Any exception MUST be justified in writing and approved by the project owner.
+
 ## Additional Constraints
 The project is required to stay aligned with the existing PlanerSport architecture: .NET/C#, ASP.NET Core, gRPC/HTTP APIs, EF Core migrations, and the current solution structure. New technology or major platform changes MUST be explicitly approved and documented in the specification.
 
@@ -52,4 +52,4 @@ This constitution is the authoritative source for project-level development expe
 - Clarifications, wording improvements, and non-substantive refinements require a PATCH version bump.
 - PRs MUST reference impacted constitution principles if they change system design, architecture, security, or release behavior.
 
-**Version**: 1.0.0 | **Ratified**: 2026-05-18 | **Last Amended**: 2026-05-18
+**Version**: 1.1.0 | **Ratified**: 2026-05-18 | **Last Amended**: 2026-05-20
