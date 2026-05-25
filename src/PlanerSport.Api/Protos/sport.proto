@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option csharp_namespace = "PlanerSport.Api.Protos";
+
+import "google/protobuf/timestamp.proto";
+
+package planersport.api.sport;
+
+message SportResponse {
+  string id = 1;
+  string name = 2;
+  string code = 3;
+  string description = 4;
+  bool is_deleted = 5;
+  google.protobuf.Timestamp created_at_utc = 6;
+  google.protobuf.Timestamp updated_at_utc = 7;
+}
+
+message CreateSportRequest {
+  string name = 1;
+  string code = 2;
+  string description = 3;
+}
+
+message UpdateSportRequest {
+  string id = 1;
+  string name = 2;
+  string code = 3;
+  string description = 4;
+}
+
+message DeleteSportRequest {
+  string id = 1;
+  string deleted_by_id = 2;
+}
+
+message GetSportRequest {
+  string id = 1;
+}
+
+message ListSportsRequest {
+  int32 page_size = 1;
+  int32 page_number = 2;
+}
+
+message ListSportsResponse {
+  repeated SportResponse sports = 1;
+  int32 total_count = 2;
+}
+
+service SportService {
+  rpc CreateSport(CreateSportRequest) returns (SportResponse);
+  rpc UpdateSport(UpdateSportRequest) returns (SportResponse);
+  rpc DeleteSport(DeleteSportRequest) returns (SportResponse);
+  rpc GetSport(GetSportRequest) returns (SportResponse);
+  rpc ListSports(ListSportsRequest) returns (ListSportsResponse);
+}

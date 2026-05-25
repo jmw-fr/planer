@@ -8,12 +8,12 @@
 
 **Purpose**: Établir la base de code partagée pour Sport, la configuration EF Core, le contrat gRPC et la seed réexécutable.
 
-- [ ] T001 Create `src/PlanerSport.Core/DomainEntityBase.cs` with reusable lifecycle metadata, soft-delete fields, and creation/update timestamps
-- [ ] T002 Create `src/PlanerSport.Core/SportAggregate/Sport.cs` with `Id`, `Name`, `Code`, `Description`, `IsDeleted`, `DeletedAtUtc`, `DeletedById`, `CreatedAtUtc`, `UpdatedAtUtc`, and constructor/invariants for required fields
-- [ ] T003 Update `src/PlanerSport.Infrastructure/ApplicationDbContext.cs` to add `DbSet<Sport> Sports`
-- [ ] T004 Create `src/PlanerSport.Infrastructure/SportEntityTypeConfiguration.cs` to configure EF Core mapping for `Sport` with a global query filter for `IsDeleted = false`, unique index on `Name` for active sports, and column mappings for lifecycle metadata
-- [ ] T005 Create `src/PlanerSport.Infrastructure/SportSeedData.cs` and integrate it into startup so default sports are seeded idempotently without duplicates
-- [ ] T006 Create `src/PlanerSport.Api/Protos/sport.proto` defining `SportService` with `CreateSport`, `UpdateSport`, `DeleteSport`, `GetSport`, and `ListSports`, plus message contracts for `SportResponse`, `CreateSportRequest`, `UpdateSportRequest`, `DeleteSportRequest`, `GetSportRequest`, and `ListSportsRequest`
+- [X] T001 Create `src/PlanerSport.Core/DomainEntityBase.cs` with reusable lifecycle metadata, soft-delete fields, and creation/update timestamps
+- [X] T002 Create `src/PlanerSport.Core/SportAggregate/Sport.cs` with `Id`, `Name`, `Code`, `Description`, `IsDeleted`, `DeletedAtUtc`, `DeletedById`, `CreatedAtUtc`, `UpdatedAtUtc`, and constructor/invariants for required fields
+- [X] T003 Update `src/PlanerSport.Infrastructure/ApplicationDbContext.cs` to add `DbSet<Sport> Sports`
+- [X] T004 Create `src/PlanerSport.Infrastructure/SportEntityTypeConfiguration.cs` to configure EF Core mapping for `Sport` with a global query filter for `IsDeleted = false`, unique index on `Name` for active sports, and column mappings for lifecycle metadata
+- [X] T005 Create `src/PlanerSport.Infrastructure/SportSeedData.cs` and integrate it into startup so default sports are seeded idempotently without duplicates
+- [X] T006 Create `src/PlanerSport.Api/Protos/sport.proto` defining `SportService` with `CreateSport`, `UpdateSport`, `DeleteSport`, `GetSport`, and `ListSports`, plus message contracts for `SportResponse`, `CreateSportRequest`, `UpdateSportRequest`, `DeleteSportRequest`, `GetSportRequest`, and `ListSportsRequest`
 
 ---
 
