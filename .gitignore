@@ -227,9 +227,9 @@ PublishScripts/
 # NuGet Symbol Packages
 *.snupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+dotnet/**/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
-!**/[Pp]ackages/build/
+!dotnet/**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/[Pp]ackages/repositories.config
 # NuGet v3's project.json files produces more ignorable files
@@ -428,3 +428,24 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /.sonarqube
+
+## Rust (rust-flutter/backend)
+target/
+**/target/
+debug/
+release/
+*.rs.bk
+*.rlib
+*.prof*
+Cargo.lock.bak
+
+## Flutter / Dart (rust-flutter/app)
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/build/
+**/*.iml
+**/.idea/
+!rust-flutter/app/**/pubspec.lock
+

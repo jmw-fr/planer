@@ -1,0 +1,26 @@
+name: planer_sport_workspace
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.9.0 <4.0.0'
+
+workspace:
+  - packages/shared
+  - packages/planer_sport_app
+
+dev_dependencies:
+  melos: ^8.0.0
+
+melos:
+  scripts:
+    analyze:
+      run: melos exec -- flutter analyze
+      description: Run static analysis on all packages
+
+    format-check:
+      run: melos exec -- dart format --set-exit-if-changed .
+      description: Verify formatting on all packages
+
+    test:
+      run: melos exec --dir-exists test -- flutter test
+      description: Run tests on all packages that have a test/ directory

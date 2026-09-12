@@ -1,0 +1,4 @@
+# See docs/Plan-Developpement-Rust-Flutter.md §3 "Review & process" for the review policy this file supports.
+# TODO: replace with actual GitHub handles/teams for the backend and Flutter reviewers.
+/rust-flutter/backend/ @TODO-backend-team
+/rust-flutter/app/ @TODO-flutter-team
