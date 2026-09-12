@@ -15,7 +15,7 @@
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.targets" />
     <File Path="dotnet-tools.json" />
-    <File Path="README.md" />
+    <File Path="../README.md" />
     <File Path="stylecop.json" />
   </Folder>
   <Folder Name="/src/">

@@ -1,512 +1,512 @@
-# PRD - Logiciel de gestion de planning d'entrainement sportif
+# PRD - Sports Training Planning Management Software
 
-## 1. Informations generales
-- **Nom du produit**: Planer Sport
-- **Version du document**: 1.0
+## 1. General information
+- **Product name**: Planer Sport
+- **Document version**: 1.0
 - **Date**: 2026-04-19
-- **Auteur**: Equipe Produit
-- **Statut**: Brouillon valide pour cadrage MVP
+- **Author**: Product Team
+- **Status**: Draft validated for MVP scoping
 
-## 2. Contexte et problematique
-Les entraineurs, clubs et sportifs individuels utilisent souvent plusieurs outils non connectes (tableurs, messageries, agenda generaliste) pour organiser les seances, suivre les charges d'entrainement et communiquer les changements. Cela provoque:
-- des erreurs de planning,
-- un manque de visibilite pour les athletes,
-- une difficulte de suivi de la charge et de la progression,
-- une perte de temps administrative pour le staff.
+## 2. Context and problem statement
+Coaches, clubs and individual athletes often use several disconnected tools (spreadsheets, messaging apps, generic calendars) to organize sessions, track training loads and communicate changes. This causes:
+- scheduling errors,
+- a lack of visibility for athletes,
+- difficulty tracking load and progression,
+- administrative time loss for staff.
 
-Le produit vise a centraliser la planification sportive, le suivi de l'execution et la communication operationnelle dans un seul logiciel.
+The product aims to centralize sports planning, execution tracking and operational communication in a single piece of software.
 
-## 3. Vision produit
-Permettre a toute structure sportive de planifier, adapter et suivre les entrainements de maniere simple, fiable et collaborative, afin d'ameliorer la regularite, la performance et la prevention des blessures.
-Le produit est disponible sur deux canaux complementaires: une application mobile (athletes et coachs en mobilite) et une interface web (coachs, managers, administration).
+## 3. Product vision
+Enable any sports organization to plan, adapt and track training in a simple, reliable and collaborative way, in order to improve consistency, performance and injury prevention.
+The product is available on two complementary channels: a mobile application (athletes and coaches on the move) and a web interface (coaches, managers, administration).
 
-## 4. Objectifs business
-1. Reduire de 40% le temps administratif de creation et mise a jour des plannings.
-2. Augmenter le taux de presence moyen aux seances de 15% en 6 mois.
-3. Atteindre un taux d'adoption hebdomadaire active (WAU) de 70% sur les utilisateurs inscrits.
-4. Offrir une base monetisable via abonnement club et abonnement coach independant.
+## 4. Business objectives
+1. Reduce the administrative time spent creating and updating schedules by 40%.
+2. Increase the average session attendance rate by 15% within 6 months.
+3. Reach a 70% weekly active adoption rate (WAU) among registered users.
+4. Provide a monetizable base via club subscriptions and independent coach subscriptions.
 
-## 5. Objectifs utilisateur
-1. Construire un planning hebdomadaire/mensuel en quelques minutes.
-2. Recevoir des notifications claires en cas de changement.
-3. Declarer simplement la realisation, la charge percue et le ressenti.
-4. Visualiser la progression individuelle et collective.
-5. Coordonner entraineurs, athletes et encadrement medical sur une meme source de verite.
-6. Permettre au sportif de suivre sa seance en temps reel, avec affichage des exercices a effectuer a chaque etape.
-7. Permettre au coach de planifier une saison complete avec differentes phases d'entrainement.
+## 5. User objectives
+1. Build a weekly/monthly schedule in a few minutes.
+2. Receive clear notifications when something changes.
+3. Easily report completion, perceived load and feelings.
+4. Visualize individual and collective progress.
+5. Coordinate coaches, athletes and medical staff around a single source of truth.
+6. Allow the athlete to follow their session in real time, with the exercises to perform displayed at each step.
+7. Allow the coach to plan a full season with different training phases.
 
-## 6. Personas cibles
-### 6.1 Entraineur principal
-- Gere plusieurs groupes et cycles d'entrainement.
-- Besoin: planifier rapidement, ajuster facilement, suivre adherence et fatigue.
+## 6. Target personas
+### 6.1 Head coach
+- Manages several groups and training cycles.
+- Need: plan quickly, adjust easily, track adherence and fatigue.
 
 ### 6.2 Athlete
-- Suit un programme individuel ou collectif.
-- Besoin: consulter ses seances, recevoir des rappels, enregistrer son feedback.
+- Follows an individual or collective program.
+- Need: view their sessions, receive reminders, record feedback.
 
-### 6.3 Responsable de club / manager sportif
-- Supervise l'organisation et la qualite du suivi.
-- Besoin: vision globale des groupes, taux de presence, charge, incidents.
+### 6.3 Club manager / sports manager
+- Oversees organization and tracking quality.
+- Need: global view of groups, attendance rate, load, incidents.
 
-### 6.4 Preparateur physique / staff medical
-- Suit la charge et signaux de fatigue/risque.
-- Besoin: acces aux donnees pertinentes, alertes seuils, coordination avec coach.
+### 6.4 Physical trainer / medical staff
+- Tracks load and fatigue/risk signals.
+- Need: access to relevant data, threshold alerts, coordination with the coach.
 
-## 7. Portee
+## 7. Scope
 ### 7.1 In scope (MVP)
-- Gestion des comptes et roles (admin, coach, athlete, staff).
-- Application mobile dediee (iOS/Android) pour consultation, notifications et feedback post-seance.
-- Interface web dediee pour planification avancee, administration et reporting.
-- Planification d'une saison d'entrainement avec phases (preparation generale, preparation specifique, competition, transition).
-- Creation de plans d'entrainement (seance, microcycle, mesocycle).
-- Calendrier individuel et collectif.
-- Mode de suivi d'entrainement en temps reel sur mobile (sequence d'exercices, duree, repos, progression).
-- Saisie et gestion de templates d'exercice reutilisables.
-- Seances de kinesitherapie (kine) pour athletes en reeducation ou prevention.
-- Seances de recuperation (auto-massage, marche, yoga, etc.) pour athletes en prevention ou post-effort.
-- Integrations externes de base (calendrier Google/Outlook, notifications push).
-- Dependances techniques definies (stack technologique, architecture).
-- Bibliotheque de templates d'exercice predefinis par sport.
-- Convocation et gestion des presences/absences.
-- Notification des changements (email/push).
-- Saisie post-seance (realise/non realise, RPE, commentaire).
-- Tableau de bord de suivi (charge hebdo, adherence, regularite).
-- Bibliotheque d'exercices de base.
+- Account and role management (admin, coach, athlete, staff).
+- Dedicated mobile application (iOS/Android) for viewing, notifications and post-session feedback.
+- Dedicated web interface for advanced planning, administration and reporting.
+- Training season planning with phases (general preparation, specific preparation, competition, transition).
+- Creation of training plans (session, microcycle, mesocycle).
+- Individual and collective calendar.
+- Real-time training follow-up mode on mobile (exercise sequence, duration, rest, progression).
+- Creation and management of reusable exercise templates.
+- Physiotherapy (physio) sessions for athletes in rehabilitation or prevention.
+- Recovery sessions (self-massage, walking, yoga, etc.) for athletes in prevention or post-effort.
+- Basic external integrations (Google/Outlook calendar, push notifications).
+- Defined technical dependencies (technology stack, architecture).
+- Library of predefined exercise templates per sport.
+- Attendance/absence tracking and management.
+- Change notifications (email/push).
+- Post-session input (completed/not completed, RPE, comment).
+- Tracking dashboard (weekly load, adherence, consistency).
+- Basic exercise library.
 
 ### 7.2 Out of scope (MVP)
-- IA de generation automatique de plans personalises.
-- Video coaching avance et analyse biomecanique.
-- Marketplace de programmes externes.
-- Facturation integree complexe multi-entites.
+- AI for automatic generation of personalized plans.
+- Advanced video coaching and biomechanical analysis.
+- Marketplace for external programs.
+- Complex integrated multi-entity billing.
 
-## 8. Hypotheses clefs
-- Les clubs acceptent de migrer depuis des tableurs vers un outil dedie.
-- Les athletes renseignent au minimum un feedback simple apres seance.
-- Les coachs utilisent le calendrier logiciel comme canal principal de communication.
+## 8. Key assumptions
+- Clubs are willing to migrate from spreadsheets to a dedicated tool.
+- Athletes provide at least simple feedback after each session.
+- Coaches use the software calendar as their main communication channel.
 
-## 9. Exigences fonctionnelles
-### 9.1 Authentification et comptes
-- Inscription et connexion securisees.
-- Recuperation de mot de passe.
-- Gestion des roles et permissions par organisation.
+## 9. Functional requirements
+### 9.1 Authentication and accounts
+- Secure sign-up and sign-in.
+- Password recovery.
+- Role and permission management per organization.
 
-### 9.2 Organisation sportive
-- Creation d'une organisation (club/academie).
-- Creation de groupes (ex: U18, Elite, Reathletisation).
-- Affectation des athletes et membres du staff.
+### 9.2 Sports organization
+- Creation of an organization (club/academy).
+- Creation of groups (e.g. U18, Elite, Return-to-play).
+- Assignment of athletes and staff members.
 
-### 9.3 Planification d'entrainement
-- Creation de seances avec:
-  - date/heure,
-  - lieu,
-  - objectif,
-  - contenu (echauffement, bloc principal, retour au calme),
-  - duree,
-  - intensite cible,
-  - materiel requis.
-- Duplication de seances et templates reutilisables.
-- Planification recurrente (ex: tous les mardis 18h).
-- Glisser-deposer dans le calendrier (web).
+### 9.3 Training planning
+- Creation of sessions with:
+  - date/time,
+  - location,
+  - objective,
+  - content (warm-up, main block, cool-down),
+  - duration,
+  - target intensity,
+  - required equipment.
+- Duplication of sessions and reusable templates.
+- Recurring scheduling (e.g. every Tuesday at 6pm).
+- Drag-and-drop in the calendar (web).
 
-### 9.4 Planification de saison et phases
-- Le coach peut creer une saison avec date de debut et date de fin.
-- Le coach peut definir plusieurs phases de saison (ex: preparation generale, preparation specifique, competition, transition) avec periode, objectif et niveau d'intensite cible.
-- Le coach peut associer des mesocycles/microcycles a chaque phase.
-- Le coach peut visualiser la saison sur une frise/calendrier avec les phases colorees.
-- Le coach peut reajuster les dates de phase et propager les decalages sur les seances associees.
+### 9.4 Season and phase planning
+- The coach can create a season with a start date and an end date.
+- The coach can define several season phases (e.g. general preparation, specific preparation, competition, transition) with a period, an objective and a target intensity level.
+- The coach can associate mesocycles/microcycles with each phase.
+- The coach can view the season on a timeline/calendar with color-coded phases.
+- The coach can adjust phase dates and propagate the shifts to the associated sessions.
 
-### 9.5 Suivi execution et feedback
-- Pointage presence/absence/retard.
-- Validation seance realisee par l'athlete.
-- Saisie RPE (echelle 1 a 10) et ressenti libre.
-- Calcul simple de charge interne: charge = duree (min) x RPE.
+### 9.5 Execution tracking and feedback
+- Attendance/absence/lateness tracking.
+- Session completion validation by the athlete.
+- RPE input (scale 1 to 10) and free-text feelings.
+- Simple internal load calculation: load = duration (min) x RPE.
 
 ### 9.6 Communication
-- Notifications automatiques sur:
-  - nouvelle seance,
+- Automatic notifications on:
+  - new session,
   - modification,
-  - annulation,
-  - rappel avant seance.
-- Canal de commentaire par seance.
+  - cancellation,
+  - reminder before a session.
+- Comment channel per session.
 
-### 9.7 Reporting et tableaux de bord
-- Vue coach: adherence, absences, charge hebdo par athlete.
-- Vue manager: activite des groupes, taux de participation, tendances mensuelles.
-- Export CSV des donnees principales.
+### 9.7 Reporting and dashboards
+- Coach view: adherence, absences, weekly load per athlete.
+- Manager view: group activity, participation rate, monthly trends.
+- CSV export of key data.
 
 ### 9.8 Administration
-- Parametrage des sports, types de seances, tags.
-- Journal d'activite minimal (qui a modifie quoi et quand).
+- Configuration of sports, session types, tags.
+- Minimal activity log (who changed what and when).
 
-### 9.9 Templates d'exercice
-- Le coach peut creer un template d'exercice avec les champs: nom, categorie, objectif, description, equipement, duree cible ou repetitions/series, temps de repos, consignes de securite.
-- Le coach peut modifier, archiver et dupliquer un template d'exercice.
-- Un template peut etre partage a l'echelle d'un groupe ou d'une organisation selon les permissions.
-- Les templates sont selectionnables lors de la creation d'une seance sur l'interface web.
-- Les templates utilises dans une seance sont affiches dans le mode guide temps reel sur mobile.
-- Le logiciel supporte des exercices issus de disciplines diverses (musculation, course, nage, etc.) pour enrichir les seances d'un sport principal, avec categorisation par type d'exercice et sport d'origine.
+### 9.9 Exercise templates
+- The coach can create an exercise template with the fields: name, category, objective, description, equipment, target duration or reps/sets, rest time, safety instructions.
+- The coach can edit, archive and duplicate an exercise template.
+- A template can be shared at the group or organization level depending on permissions.
+- Templates can be selected when creating a session on the web interface.
+- Templates used in a session are displayed in the real-time guided mode on mobile.
+- The software supports exercises from various disciplines (strength training, running, swimming, etc.) to enrich sessions for a main sport, with categorization by exercise type and originating sport.
 
-### 9.10 Canaux et parite fonctionnelle
-- Le logiciel doit inclure une application mobile et une interface web.
-- L'application mobile cible en priorite les parcours athletes et coach terrain: consultation planning, notifications, validation seance, saisie RPE/commentaire.
-- L'interface web cible en priorite les parcours coach/manager/admin: planification detaillee, gestion groupes, reporting, parametrage.
-- Les donnees doivent etre synchronisees en temps reel ou quasi temps reel entre mobile et web.
-- Les droits d'acces et permissions doivent etre coherents entre les deux canaux.
+### 9.10 Channels and functional parity
+- The software must include a mobile application and a web interface.
+- The mobile application primarily targets athlete and field-coach journeys: viewing the schedule, notifications, session validation, RPE/comment input.
+- The web interface primarily targets coach/manager/admin journeys: detailed planning, group management, reporting, configuration.
+- Data must be synchronized in real time or near real time between mobile and web.
+- Access rights and permissions must be consistent across both channels.
 
-### 9.11 Suivi d'entrainement en temps reel (mobile)
-- Le sportif peut demarrer une seance depuis l'application mobile en mode guide.
-- L'application affiche en temps reel l'exercice courant, les repetitions/series ou la duree cible, ainsi que le temps de repos.
-- L'application indique automatiquement l'exercice suivant et la progression dans la seance (etape x/y).
-- Le sportif peut marquer un exercice comme termine, mettre en pause et reprendre la seance.
-- Les adaptations de seance publiees par le coach sont visibles en quasi temps reel sur la seance mobile active.
+### 9.11 Real-time training tracking (mobile)
+- The athlete can start a session from the mobile application in guided mode.
+- The application displays in real time the current exercise, the target reps/sets or duration, and the rest time.
+- The application automatically indicates the next exercise and progress within the session (step x/y).
+- The athlete can mark an exercise as completed, pause and resume the session.
+- Session adjustments published by the coach are visible in near real time on the active mobile session.
 
-### 9.12 Seances de kinesitherapie
-- Le kinésithérapeute peut creer des seances de kine individuelles ou de groupe avec objectifs medicaux (reeducation, prevention, renforcement).
-- Les seances de kine peuvent inclure des exercices de mobilite, etirements, proprioception, renforcement musculaire cible.
-- Le kinésithérapeute peut associer des notes medicales privees a chaque seance (non visibles par les athletes).
-- Les athletes peuvent suivre une seance de kine en mode guide mobile similaire aux seances d'entrainement.
-- Le staff medical peut suivre l'adherence et le ressenti post-seance de kine via le dashboard.
-- Les seances de kine sont distinguees des seances d'entrainement dans le calendrier (couleur/code different).
+### 9.12 Physiotherapy sessions
+- The physiotherapist can create individual or group physio sessions with medical objectives (rehabilitation, prevention, strengthening).
+- Physio sessions can include mobility exercises, stretching, proprioception, targeted muscle strengthening.
+- The physiotherapist can attach private medical notes to each session (not visible to athletes).
+- Athletes can follow a physio session in mobile guided mode similar to training sessions.
+- Medical staff can track adherence and post-session feedback for physio sessions via the dashboard.
+- Physio sessions are distinguished from training sessions in the calendar (different color/code).
 
-### 9.13 Seances de recuperation
-- Le coach ou preparateur physique peut creer des seances de recuperation individuelles ou collectives (auto-massage, marche, yoga, etirements passifs, etc.).
-- Les seances de recuperation peuvent etre programmees en prevention (ex: post-match) ou en reponse a une charge elevee detectee.
-- Les athletes peuvent suivre une seance de recuperation en mode guide mobile avec rappels de duree et consignes simples.
-- Le feedback post-recuperation peut inclure un ressenti de fraicheur ou de fatigue residuelle.
-- Les seances de recuperation sont distinguees dans le calendrier (couleur/code different) et peuvent etre marquees comme optionnelles.
+### 9.13 Recovery sessions
+- The coach or physical trainer can create individual or collective recovery sessions (self-massage, walking, yoga, passive stretching, etc.).
+- Recovery sessions can be scheduled preventively (e.g. post-match) or in response to a detected high load.
+- Athletes can follow a recovery session in mobile guided mode with duration reminders and simple instructions.
+- Post-recovery feedback can include a feeling of freshness or residual fatigue.
+- Recovery sessions are distinguished in the calendar (different color/code) and can be marked as optional.
 
-### 9.14 Integrations externes
-- Synchronisation bidirectionnelle avec calendriers externes (Google Calendar, Outlook) pour import/export des seances.
-- Notifications push via Azure Notification Hubs pour rappels de seance et modifications.
-- Export CSV/JSON des donnees principales (planning, presence, charge) pour integration avec outils tiers.
-- Possibilite d'import de donnees depuis feuilles Excel existantes pour migration initiale.
+### 9.14 External integrations
+- Two-way synchronization with external calendars (Google Calendar, Outlook) to import/export sessions.
+- Push notifications via Azure Notification Hubs for session reminders and modifications.
+- CSV/JSON export of key data (schedule, attendance, load) for integration with third-party tools.
+- Ability to import data from existing Excel spreadsheets for initial migration.
 
-### 9.15 Dependances techniques et architecture
-- Frontend web: Blazor avec C# pour l'interface coach/manager (partage de code avec backend).
-- Frontend mobile: Flutter pour applications iOS/Android.
-- Backend: ASP.Net Core avec C# et base de donnees SQL Server ou PostgreSQL.
-- Architecture: API RESTful avec authentification JWT, stockage cloud (Azure/AWS S3), deploiement conteneurise (Docker).
-- Securite: Chiffrement TLS 1.3, conformite RGPD avec audit trails.
+### 9.15 Technical dependencies and architecture
+- Web frontend: Blazor with C# for the coach/manager interface (code sharing with the backend).
+- Mobile frontend: Flutter for iOS/Android applications.
+- Backend: ASP.Net Core with C# and SQL Server or PostgreSQL database.
+- Architecture: RESTful API with JWT authentication, cloud storage (Azure/AWS S3), containerized deployment (Docker).
+- Security: TLS 1.3 encryption, GDPR compliance with audit trails.
 
-## 10. Exigences non fonctionnelles
+## 10. Non-functional requirements
 ### 10.1 Performance
-- Chargement d'un calendrier hebdomadaire < 2 secondes pour 95% des requetes.
-- Enregistrement feedback post-seance < 1 seconde pour 95% des requetes.
-- Affichage de l'exercice suivant en mode guide mobile < 500 ms pour 95% des transitions.
+- Weekly calendar load time < 2 seconds for 95% of requests.
+- Post-session feedback save < 1 second for 95% of requests.
+- Next exercise display in mobile guided mode < 500 ms for 95% of transitions.
 
-### 10.2 Securite et conformite
-- Chiffrement TLS en transit.
-- Hashage fort des mots de passe.
-- Gestion des acces par role stricte.
-- Respect RGPD: consentement, droit d'acces, droit a l'effacement, minimisation des donnees.
+### 10.2 Security and compliance
+- TLS encryption in transit.
+- Strong password hashing.
+- Strict role-based access control.
+- GDPR compliance: consent, right of access, right to erasure, data minimization.
 
-### 10.3 Disponibilite
-- SLA cible MVP: 99.5% mensuel.
-- Sauvegardes quotidiennes et restauration testee.
+### 10.3 Availability
+- MVP target SLA: 99.5% monthly.
+- Daily backups and tested restoration.
 
-### 10.4 Scalabilite
-- Support de 100 organisations, 50 000 athletes en base, sans degradation majeure.
+### 10.4 Scalability
+- Support for 100 organizations, 50,000 athletes in the database, without major degradation.
 
-### 10.5 Accessibilite et UX
-- Interface responsive mobile et desktop.
-- Parcours principal realisable en moins de 3 actions pour consulter la prochaine seance.
-- Respect des bonnes pratiques d'accessibilite (contraste, navigation clavier, labels).
+### 10.5 Accessibility and UX
+- Responsive interface for mobile and desktop.
+- Main journey achievable in fewer than 3 actions to view the next session.
+- Compliance with accessibility best practices (contrast, keyboard navigation, labels).
 
-## 11. Parcours utilisateur clefs
-### 11.1 Coach cree un microcycle
-1. Selectionne son groupe.
-2. Definit la phase de saison cible et ses objectifs.
-3. Ajoute 4 seances dans la semaine via template.
-4. Ajuste les objectifs et l'intensite cible.
-5. Publie le planning et notifie le groupe.
+## 11. Key user journeys
+### 11.1 Coach creates a microcycle
+1. Selects their group.
+2. Defines the target season phase and its objectives.
+3. Adds 4 sessions for the week via a template.
+4. Adjusts the objectives and target intensity.
+5. Publishes the schedule and notifies the group.
 
-### 11.2 Athlete consulte et valide
-1. Ouvre l'application.
-2. Consulte sa prochaine seance.
-3. Lance le mode guide temps reel et suit les exercices proposes et les temps de repos.
-4. Valide chaque etape de la seance jusqu'a completion.
-5. Saisit RPE et commentaire en fin de seance.
+### 11.2 Athlete views and validates
+1. Opens the application.
+2. Views their next session.
+3. Starts the real-time guided mode and follows the proposed exercises and rest times.
+4. Validates each step of the session until completion.
+5. Enters RPE and a comment at the end of the session.
 
-### 11.3 Manager suit l'activite
-1. Ouvre le tableau de bord global.
-2. Compare les taux de presence par groupe.
-3. Exporte les donnees mensuelles pour reporting interne.
+### 11.3 Manager tracks activity
+1. Opens the global dashboard.
+2. Compares attendance rates by group.
+3. Exports monthly data for internal reporting.
 
-### 11.4 Kinesitherapeute gere une seance de reeducation
-1. Selectionne l'athlete en reeducation.
-2. Cree une seance de kine avec exercices cibles (etirements, renforcement).
-3. Ajoute des notes medicales privees.
-4. Publie la seance et suit l'adherence via le dashboard.
+### 11.4 Physiotherapist manages a rehabilitation session
+1. Selects the athlete in rehabilitation.
+2. Creates a physio session with targeted exercises (stretching, strengthening).
+3. Adds private medical notes.
+4. Publishes the session and tracks adherence via the dashboard.
 
-### 11.5 Coach programme une seance de recuperation
-1. Identifie un besoin de recuperation (post-match ou charge elevee detectee).
-2. Cree une seance de recuperation collective (marche, auto-massage, yoga).
-3. Marque la seance comme optionnelle.
-4. Publie et suit l'adherence volontaire via le dashboard.
+### 11.5 Coach schedules a recovery session
+1. Identifies a recovery need (post-match or detected high load).
+2. Creates a collective recovery session (walking, self-massage, yoga).
+3. Marks the session as optional.
+4. Publishes it and tracks voluntary adherence via the dashboard.
 
-## 12. KPI et metriques de succes
-- Taux de presence moyen par groupe.
-- Taux de seances avec feedback complet.
-- WAU/MAU par role utilisateur.
-- Delai moyen de publication d'un planning hebdo.
-- Nombre moyen de modifications de planning par semaine.
-- NPS coach et NPS athlete.
+## 12. KPIs and success metrics
+- Average attendance rate per group.
+- Rate of sessions with complete feedback.
+- WAU/MAU by user role.
+- Average time to publish a weekly schedule.
+- Average number of schedule modifications per week.
+- Coach NPS and athlete NPS.
 
-## 13. Priorisation (MoSCoW)
+## 13. Prioritization (MoSCoW)
 ### Must have
-- Roles et permissions
-- Calendrier de seances
-- Planification de saison avec phases
-- Saisie et reutilisation de templates d'exercice
-- Notifications de changement
-- Presence + feedback RPE
-- Dashboard adherence/charge de base
+- Roles and permissions
+- Session calendar
+- Season planning with phases
+- Creation and reuse of exercise templates
+- Change notifications
+- Attendance + RPE feedback
+- Basic adherence/load dashboard
 
 ### Should have
-- Templates avances par sport
-- Export CSV enrichi
-- Alertes fatigue seuil RPE
-- Seances de kinesitherapie de base
-- Seances de recuperation collectives
+- Advanced templates by sport
+- Enriched CSV export
+- Fatigue alerts based on RPE threshold
+- Basic physiotherapy sessions
+- Collective recovery sessions
 
 ### Could have
-- Integration wearables (Garmin, Polar)
-- Suggestions automatiques de deload
+- Wearable integration (Garmin, Polar)
+- Automatic deload suggestions
 
 ### Won't have (MVP)
-- IA generative de plan complet
-- Analyse video automatisee
+- Fully generative AI plans
+- Automated video analysis
 
-## 14. Contraintes et dependances
-- Disponibilite d'un service d'envoi de notifications (email/push).
-- Definition d'un referentiel commun d'exercices par sport.
-- Validation legale RGPD et politique de retention des donnees.
-- Capacite du staff a accompagner le changement d'usage.
+## 14. Constraints and dependencies
+- Availability of a notification sending service (email/push).
+- Definition of a common exercise reference library per sport.
+- Legal GDPR validation and data retention policy.
+- Staff capacity to support the change in usage.
 
-## 15. Risques et mitigations
-1. **Faible adoption athlete**
-   - Mitigation: UX mobile ultra simple, rappels automatises, onboarding guide.
-2. **Surcharge de saisie pour coach**
-   - Mitigation: templates, duplication, import initial depuis CSV.
-3. **Qualite de donnees heterogene**
-   - Mitigation: champs standardises + validations minimales.
-4. **Sensibilite donnees sante**
-   - Mitigation: controle d'acces strict, traceabilite, minimisation donnees.
+## 15. Risks and mitigations
+1. **Low athlete adoption**
+   - Mitigation: ultra-simple mobile UX, automated reminders, guided onboarding.
+2. **Input overload for coaches**
+   - Mitigation: templates, duplication, initial CSV import.
+3. **Heterogeneous data quality**
+   - Mitigation: standardized fields + minimal validations.
+4. **Sensitivity of health data**
+   - Mitigation: strict access control, traceability, data minimization.
 
-## 16. Plan de release
-### Phase 0 - Cadrage (2 a 3 semaines)
-- Ateliers metiers, validation scope MVP, maquettes principales.
+## 16. Release plan
+### Phase 0 - Scoping (2 to 3 weeks)
+- Business workshops, MVP scope validation, main mockups.
 
-### Phase 1 - MVP (8 a 12 semaines)
-- Auth, roles, calendrier, notifications, presence, feedback, dashboard de base.
+### Phase 1 - MVP (8 to 12 weeks)
+- Auth, roles, calendar, notifications, attendance, feedback, basic dashboard.
 
-### Phase 2 - Stabilisation (3 a 4 semaines)
-- Corrections, optimisation performance, instrumentation KPI.
+### Phase 2 - Stabilization (3 to 4 weeks)
+- Fixes, performance optimization, KPI instrumentation.
 
 ### Phase 3 - Evolution (post-MVP)
-- Integrations externes, alertes avancees, analytique renforcee.
+- External integrations, advanced alerts, enhanced analytics.
 
-## 23. Lot 2 - Evolution post-MVP
-### 23.1 Metriques de succes detaillees
-- Definir des seuils cibles pour chaque KPI (ex: taux presence >85%, NPS >7/10).
-- Ajouter des metriques techniques (temps de reponse, taux d'erreur, retention utilisateurs).
-- Benchmarks concurrentiels et analyse de satisfaction utilisateur detaillee.
+## 23. Batch 2 - Post-MVP evolution
+### 23.1 Detailed success metrics
+- Define target thresholds for each KPI (e.g. attendance rate >85%, NPS >7/10).
+- Add technical metrics (response time, error rate, user retention).
+- Competitive benchmarks and detailed user satisfaction analysis.
 
-### 23.2 Analyse des risques et mitigation etendue
-- Risques techniques (scalabilite, securite des donnees medicales).
-- Risques metier (adoption par les clubs, concurrence).
-- Plan de continuite (backup, reprise d'activite).
+### 23.2 Extended risk analysis and mitigation
+- Technical risks (scalability, medical data security).
+- Business risks (club adoption, competition).
+- Business continuity plan (backup, disaster recovery).
 
-### 23.3 Scenarios de test et validation
-- Tests utilisateurs pilotes avec clubs partenaires.
-- Criteres de qualite (accessibilite WCAG, performance mobile).
-- Validation conformite reglementaire (RGPD, donnees de sante).
+### 23.3 Test and validation scenarios
+- Pilot user tests with partner clubs.
+- Quality criteria (WCAG accessibility, mobile performance).
+- Regulatory compliance validation (GDPR, health data).
 
-### 23.4 Budget et ressources estimees
-- Estimation cout developpement MVP et Lot 2.
-- Equipe requise (developpeurs, designers, PM).
-- Plan de recrutement et formation.
+### 23.4 Estimated budget and resources
+- Development cost estimate for MVP and Batch 2.
+- Required team (developers, designers, PM).
+- Recruitment and training plan.
 
-### 23.5 Maintenance et evolution
-- Plan de support utilisateur (hotline, FAQ, tutoriels).
-- Roadmap Lot 2 (fonctionnalites prioritaires: IA, wearables, analytics).
-- Strategie de monetisation detaillee (abonnements, premium features).
+### 23.5 Maintenance and evolution
+- User support plan (hotline, FAQ, tutorials).
+- Batch 2 roadmap (priority features: AI, wearables, analytics).
+- Detailed monetization strategy (subscriptions, premium features).
 
-## 17. Criteres d'acceptation MVP
-1. Un coach peut creer et publier un planning hebdomadaire complet pour un groupe.
-2. Un athlete peut consulter ses seances et soumettre son feedback post-seance en moins de 60 secondes.
-3. Toute modification de seance envoie une notification aux membres concernes.
-4. Un manager peut visualiser un reporting mensuel de presence et charge.
-5. Les donnees utilisateur respectent les exigences RGPD definies.
-6. Les parcours MVP critiques sont disponibles sur application mobile et interface web selon les usages definis.
-7. Un sportif peut suivre une seance en temps reel sur mobile avec affichage dynamique de l'exercice a effectuer et de l'exercice suivant.
-8. Un coach peut planifier une saison complete avec au moins 3 phases et associer les cycles d'entrainement a chaque phase.
-9. Un kinesitherapeute peut creer et assigner des seances de kine individuelles avec suivi d'adherence.
-10. Un coach peut programmer des seances de recuperation collectives avec suivi d'adherence optionnel.
+## 17. MVP acceptance criteria
+1. A coach can create and publish a complete weekly schedule for a group.
+2. An athlete can view their sessions and submit post-session feedback in under 60 seconds.
+3. Any session modification sends a notification to the relevant members.
+4. A manager can view a monthly attendance and load report.
+5. User data complies with the defined GDPR requirements.
+6. Critical MVP journeys are available on both the mobile application and the web interface according to their defined usages.
+7. An athlete can follow a session in real time on mobile with a dynamic display of the current exercise and the next one.
+8. A coach can plan a complete season with at least 3 phases and associate training cycles with each phase.
+9. A physiotherapist can create and assign individual physio sessions with adherence tracking.
+10. A coach can schedule collective recovery sessions with optional adherence tracking.
 
-## 18. Questions ouvertes
-- Faut-il inclure des objectifs nutrition/sommeil dans le MVP ou phase suivante?
-- Quel niveau de personnalisation par discipline sportive est requis au lancement?
-- Quel canal de notification est prioritaire selon les segments (email, push, SMS)?
+## 18. Open questions
+- Should nutrition/sleep objectives be included in the MVP or a later phase?
+- What level of customization per sports discipline is required at launch?
+- Which notification channel is the priority per segment (email, push, SMS)?
 
-## 19. Annexes (optionnel)
-- Glossaire: microcycle, mesocycle, RPE, charge interne.
-- Maquettes ecrans (a ajouter).
-- Schema de donnees initial (a ajouter).
+## 19. Appendices (optional)
+- Glossary: microcycle, mesocycle, RPE, internal load.
+- Screen mockups (to be added).
+- Initial data schema (to be added).
 
-## 22. Exemples de templates d'exercice predefinis
-### Football - Seance musculation generale
-- Squats: 4 series x 10 repetitions
-- Fentes avant: 3 series x 12 repetitions/jambe
-- Pompes: 3 series x 15 repetitions
-- Tractions (assistees): 3 series x 8 repetitions
-- Gainage: 3 series x 30 secondes
+## 22. Examples of predefined exercise templates
+### Football - General strength training session
+- Squats: 4 sets x 10 reps
+- Forward lunges: 3 sets x 12 reps/leg
+- Push-ups: 3 sets x 15 reps
+- Pull-ups (assisted): 3 sets x 8 reps
+- Core bracing: 3 sets x 30 seconds
 
-### Basketball - Seance coordination et agilite
-- Sauts en hauteur: 4 series x 8 repetitions
-- Dribble technique: 3 series x 2 minutes
-- Tirs au panier: 3 series x 20 tirs
-- Equilibre sur une jambe: 3 series x 30 secondes/jambe
-- Yoga dynamique: 3 series x 5 minutes
+### Basketball - Coordination and agility session
+- Vertical jumps: 4 sets x 8 reps
+- Technical dribbling: 3 sets x 2 minutes
+- Shooting drills: 3 sets x 20 shots
+- Single-leg balance: 3 sets x 30 seconds/leg
+- Dynamic yoga: 3 sets x 5 minutes
 
-### Natation - Seance endurance
-- Crawl continu: 10 x 100m avec 20s repos
-- Brasse technique: 8 x 50m avec 30s repos
-- Dos crawle: 6 x 75m avec 45s repos
-- Nage avec palmes: 4 x 200m avec 1min repos
+### Swimming - Endurance session
+- Continuous freestyle: 10 x 100m with 20s rest
+- Technical breaststroke: 8 x 50m with 30s rest
+- Backstroke: 6 x 75m with 45s rest
+- Swimming with fins: 4 x 200m with 1min rest
 
-### Recuperation - Seance post-match
-- Marche active: 20 minutes a rythme modere
-- Auto-massage cuisses: 5 minutes par jambe
-- Etirements passifs: 10 minutes (quadriceps, ischio-jambiers, adducteurs)
-- Respiration profonde: 5 minutes de meditation
+### Recovery - Post-match session
+- Active walking: 20 minutes at a moderate pace
+- Thigh self-massage: 5 minutes per leg
+- Passive stretching: 10 minutes (quadriceps, hamstrings, adductors)
+- Deep breathing: 5 minutes of meditation
 
-### Kinesitherapie - Renforcement genou
-- Squats isometriques: 3 series x 20 secondes
-- Extensions jambe tendue: 3 series x 15 repetitions
-- Flexions jambe assise: 3 series x 12 repetitions
-- Proprioception unipodale: 3 series x 30 secondes
-- Mobilite articulaire: 5 minutes de rotations douces
+### Physiotherapy - Knee strengthening
+- Isometric squats: 3 sets x 20 seconds
+- Straight leg raises: 3 sets x 15 reps
+- Seated leg curls: 3 sets x 12 reps
+- Single-leg proprioception: 3 sets x 30 seconds
+- Joint mobility: 5 minutes of gentle rotations
 
-## 20. Liste indicative de sports et exercices supportes
-### Sports principaux cibles (exemples)
+## 20. Indicative list of supported sports and exercises
+### Main target sports (examples)
 - Football
 - Basketball
 - Rugby
 - Handball
 - Volleyball
 - Tennis
-- Natation
-- Athletisme
-- Cyclisme
-- Course d'orientation
-- Arts martiaux (judo, karaté, etc.)
-- Gymnastique
-- Danse
+- Swimming
+- Athletics
+- Cycling
+- Orienteering
+- Martial arts (judo, karate, etc.)
+- Gymnastics
+- Dance
 
-### Exercices transversaux (musculation, course, nage, etc.)
-- **Musculation**: squats, fentes, pompes, tractions, developpe couche, souleve de terre, etc.
-- **Course**: fractionne, endurance, fartlek, sprint, marche nordique, etc.
-- **Natation**: crawl, brasse, dos crawle, nage avec palmes, etc.
-- **Mobilite/Preparation physique**: yoga, pilates, etirements dynamiques, gainage, etc.
-- **Coordination**: exercices de proprioception, sauts, equilibre, etc.
-- **Conditionnement**: circuits training, HIIT, tabata, etc.
-- **Kinesitherapie**: etirements therapeutiques, renforcement musculaire cible, mobilite articulaire, proprioception medicale, etc.
-- **Recuperation**: auto-massage, marche active, yoga restaurateur, etirements passifs, respiration, etc.
+### Cross-disciplinary exercises (strength training, running, swimming, etc.)
+- **Strength training**: squats, lunges, push-ups, pull-ups, bench press, deadlift, etc.
+- **Running**: interval training, endurance, fartlek, sprint, Nordic walking, etc.
+- **Swimming**: freestyle, breaststroke, backstroke, swimming with fins, etc.
+- **Mobility/Physical preparation**: yoga, pilates, dynamic stretching, core bracing, etc.
+- **Coordination**: proprioception exercises, jumps, balance, etc.
+- **Conditioning**: circuit training, HIIT, tabata, etc.
+- **Physiotherapy**: therapeutic stretching, targeted muscle strengthening, joint mobility, medical proprioception, etc.
+- **Recovery**: self-massage, active walking, restorative yoga, passive stretching, breathing, etc.
 
-### Exemples concrets d'exercices multi-sports dans une seance
-- **Seance football avec musculation**: echauffement course + squats + dribble technique + developpe couche + jeu reduit.
-- **Seance basketball avec natation**: echauffement natation + pompes + tirs au panier + gainage + nage endurance.
-- **Seance rugby avec course**: fractionne + plaquage technique + squats + fartlek + etirements.
+### Concrete examples of multi-sport exercises in a session
+- **Football session with strength training**: running warm-up + squats + technical dribbling + bench press + small-sided game.
+- **Basketball session with swimming**: swimming warm-up + push-ups + shooting drills + core bracing + endurance swimming.
+- **Rugby session with running**: interval training + tackling technique + squats + fartlek + stretching.
 
-Cette liste est extensible via parametrage admin et peut etre enrichie par les utilisateurs (templates personnalises).
+This list is extensible via admin configuration and can be enriched by users (custom templates).
 
-## 20. Mini user story map - Mode guide temps reel (mobile)
-### Activite 1 - Preparer la seance
-- En tant que sportif, je veux voir ma seance du jour pour verifier son contenu avant de la demarrer.
-- En tant que sportif, je veux telecharger la seance sur mon mobile pour limiter l'impact d'une connexion instable.
+## 20. Mini user story map - Real-time guided mode (mobile)
+### Activity 1 - Prepare the session
+- As an athlete, I want to see today's session so I can check its content before starting it.
+- As an athlete, I want to download the session to my mobile to limit the impact of an unstable connection.
 
-### Activite 2 - Demarrer le mode guide
-- En tant que sportif, je veux lancer la seance en 1 action pour commencer rapidement.
-- En tant que sportif, je veux voir l'objectif global de la seance (duree totale, nombre d'exercices) au demarrage.
+### Activity 2 - Start the guided mode
+- As an athlete, I want to start the session in 1 action so I can begin quickly.
+- As an athlete, I want to see the overall session objective (total duration, number of exercises) at start-up.
 
-### Activite 3 - Executer chaque exercice
-- En tant que sportif, je veux voir l'exercice courant avec consignes (series/repetitions ou duree) pour executer correctement.
-- En tant que sportif, je veux voir un chronometre et les temps de repos pour suivre le rythme attendu.
-- En tant que sportif, je veux marquer l'exercice comme termine pour passer a l'etape suivante.
+### Activity 3 - Perform each exercise
+- As an athlete, I want to see the current exercise with instructions (sets/reps or duration) so I can perform it correctly.
+- As an athlete, I want to see a timer and rest times so I can follow the expected pace.
+- As an athlete, I want to mark the exercise as completed so I can move to the next step.
 
-### Activite 4 - Gerer le rythme en seance
-- En tant que sportif, je veux mettre en pause et reprendre la seance pour m'adapter a mon contexte reel.
-- En tant que sportif, je veux revenir a l'exercice precedent en cas d'erreur de validation.
+### Activity 4 - Manage the pace during the session
+- As an athlete, I want to pause and resume the session so I can adapt to my actual context.
+- As an athlete, I want to go back to the previous exercise in case of a validation mistake.
 
-### Activite 5 - S'adapter aux changements coach
-- En tant que sportif, je veux recevoir les modifications de seance publiees par le coach en quasi temps reel.
-- En tant que sportif, je veux etre informe clairement lorsqu'un exercice est remplace ou ajuste.
+### Activity 5 - Adapt to coach changes
+- As an athlete, I want to receive session changes published by the coach in near real time.
+- As an athlete, I want to be clearly informed when an exercise is replaced or adjusted.
 
-### Activite 6 - Cloturer et transmettre le feedback
-- En tant que sportif, je veux finaliser la seance et voir un recapitulatif (duree, exercices completes, ecarts).
-- En tant que sportif, je veux saisir mon RPE et un commentaire pour transmettre mon ressenti au coach.
+### Activity 6 - Close out and submit feedback
+- As an athlete, I want to finish the session and see a summary (duration, completed exercises, deviations).
+- As an athlete, I want to enter my RPE and a comment so I can share my feelings with the coach.
 
-### Tranche MVP recommandee
-- Consulter la seance du jour.
-- Demarrer la seance en mode guide.
-- Afficher exercice courant + suivant, chronometre et repos.
-- Valider une etape, pause/reprise.
-- Cloturer la seance avec RPE/commentaire.
+### Recommended MVP slice
+- View today's session.
+- Start the session in guided mode.
+- Display current + next exercise, timer and rest.
+- Validate a step, pause/resume.
+- Close out the session with RPE/comment.
 
-### Tranche post-MVP recommandee
-- Mode hors ligne complet avec resynchronisation intelligente.
-- Adaptation automatique du rythme selon progression en direct.
-- Guidance audio et integration wearables en temps reel.
+### Recommended post-MVP slice
+- Full offline mode with smart resynchronization.
+- Automatic pace adaptation based on live progression.
+- Audio guidance and real-time wearable integration.
 
-## 21. Exemple concret - Saison type (10 mois)
-### Hypothese de calendrier
-- Debut de saison: septembre
-- Fin de saison: juin
-- Contexte: sport collectif avec 1 match officiel par semaine en periode competitive
+## 21. Concrete example - Typical season (10 months)
+### Calendar assumption
+- Season start: September
+- Season end: June
+- Context: team sport with 1 official match per week during the competitive period
 
-### Phase 1 - Preparation generale (semaines 1 a 8)
-- Objectif principal: developper la base physique (endurance, force generale, mobilite).
-- Volume d'entrainement: eleve.
-- Intensite moyenne: moderee.
-- Repartition indicative: 60% physique general, 25% technique, 15% tactique.
-- KPI de phase: assiduite, tolerance a la charge, progression tests physiques de base.
+### Phase 1 - General preparation (weeks 1 to 8)
+- Main objective: build the physical base (endurance, general strength, mobility).
+- Training volume: high.
+- Average intensity: moderate.
+- Indicative breakdown: 60% general physical, 25% technical, 15% tactical.
+- Phase KPI: attendance, load tolerance, progression on basic physical tests.
 
-### Phase 2 - Preparation specifique (semaines 9 a 14)
-- Objectif principal: transferer les acquis vers les exigences specifiques de la discipline.
-- Volume d'entrainement: moyen a eleve.
-- Intensite moyenne: moderee a elevee.
-- Repartition indicative: 35% physique specifique, 35% technique, 30% tactique.
-- KPI de phase: qualite d'execution des scenarios de jeu, RPE maitrise, reduction des ecarts entre postes.
+### Phase 2 - Specific preparation (weeks 9 to 14)
+- Main objective: transfer the gains toward the discipline's specific requirements.
+- Training volume: medium to high.
+- Average intensity: moderate to high.
+- Indicative breakdown: 35% specific physical, 35% technical, 30% tactical.
+- Phase KPI: quality of game scenario execution, RPE control, reduced gaps between positions.
 
-### Phase 3 - Competition 1 (semaines 15 a 26)
-- Objectif principal: maximiser la performance en match et stabiliser la fraicheur.
-- Volume d'entrainement: moyen.
-- Intensite moyenne: elevee sur seances cibles, allegee en veille de match.
-- Repartition indicative: 20% physique maintien, 35% technique, 45% tactique.
-- KPI de phase: disponibilite des athletes, performance match, maintien charge sans sur-fatigue.
+### Phase 3 - Competition 1 (weeks 15 to 26)
+- Main objective: maximize match performance and maintain freshness.
+- Training volume: medium.
+- Average intensity: high on targeted sessions, lighter the day before a match.
+- Indicative breakdown: 20% maintenance physical, 35% technical, 45% tactical.
+- Phase KPI: athlete availability, match performance, load maintained without overreaching.
 
-### Phase 4 - Transition intermediaire (semaines 27 a 29)
-- Objectif principal: recuperation active et prevention des blessures.
-- Volume d'entrainement: faible.
-- Intensite moyenne: faible a moderee.
-- Repartition indicative: 50% recuperation/mobilite, 30% technique legere, 20% ludique.
-- KPI de phase: baisse fatigue percue, retour de motivation, absence de blessures de surcharge.
+### Phase 4 - Intermediate transition (weeks 27 to 29)
+- Main objective: active recovery and injury prevention.
+- Training volume: low.
+- Average intensity: low to moderate.
+- Indicative breakdown: 50% recovery/mobility, 30% light technical, 20% playful activities.
+- Phase KPI: reduced perceived fatigue, motivation returning, absence of overuse injuries.
 
-### Phase 5 - Competition 2 (semaines 30 a 40)
-- Objectif principal: pic de performance sur la fin de saison.
-- Volume d'entrainement: moyen.
-- Intensite moyenne: elevee avec microcycles de deload planifies.
-- Repartition indicative: 20% physique maintien, 30% technique, 50% tactique.
-- KPI de phase: forme sportive, regularite resultats, adherence plan de deload.
+### Phase 5 - Competition 2 (weeks 30 to 40)
+- Main objective: peak performance at the end of the season.
+- Training volume: medium.
+- Average intensity: high with planned deload microcycles.
+- Indicative breakdown: 20% maintenance physical, 30% technical, 50% tactical.
+- Phase KPI: sporting form, consistency of results, adherence to the deload plan.
 
-### Exemple de regles de planification associees
-- Regle 1: toute phase doit contenir au moins 1 mesocycle et 2 microcycles.
-- Regle 2: en phase competition, bloquer automatiquement un jour de recuperation post-match.
-- Regle 3: declencher une alerte si charge hebdomadaire augmente de plus de 20% sur 2 semaines consecutives.
-- Regle 4: imposer une semaine allegee toutes les 4 a 6 semaines selon le niveau du groupe.
+### Example of associated planning rules
+- Rule 1: every phase must contain at least 1 mesocycle and 2 microcycles.
+- Rule 2: during the competition phase, automatically block a post-match recovery day.
+- Rule 3: trigger an alert if weekly load increases by more than 20% over 2 consecutive weeks.
+- Rule 4: enforce a lighter week every 4 to 6 weeks depending on the group's level.
 
-### Valeur produit attendue
-- Donner au coach une vision macro (saison) et micro (seance) dans un meme outil.
-- Aligner staff sportif et medical sur une periodisation explicite.
-- Faciliter les arbitrages de charge grace a des phases lisibles et mesurables.
+### Expected product value
+- Give the coach both a macro (season) and micro (session) view in a single tool.
+- Align sports and medical staff around an explicit periodization.
+- Facilitate load trade-offs thanks to readable, measurable phases.
