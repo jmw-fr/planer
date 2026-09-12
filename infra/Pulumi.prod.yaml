@@ -1,0 +1,29 @@
+# Production stack configuration.
+# Secrets come from the linked Pulumi ESC environment (never stored here).
+# Production is enforced (in config.ts) to use privateLink origins + Prevention WAF.
+environment:
+#  - sport-planer-infra-prod
+config:
+  sport-planer-infra:environment: prod
+  sport-planer-infra:location: westeurope
+  sport-planer-infra:backend:
+    image: ghcr.io/planer/backend:stable
+    cpu: 1
+    memory: 2Gi
+    minReplicas: 2
+    maxReplicas: 6
+  sport-planer-infra:keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    cpu: 1
+    memory: 2Gi
+    hostname: auth
+  sport-planer-infra:postgres:
+    sku: Standard_D2ds_v5
+    storageGb: 64
+  sport-planer-infra:frontDoor:
+    originMode: privateLink
+    wafMode: Prevention
+  sport-planer-infra:tags:
+    project: planer
+    environment: prod
+    managedBy: pulumi

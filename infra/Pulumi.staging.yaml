@@ -1,0 +1,28 @@
+# Staging stack configuration.
+# Secrets come from the linked Pulumi ESC environment (never stored here).
+environment:
+#  - sport-planer-infra-staging
+config:
+  sport-planer-infra:environment: staging
+  sport-planer-infra:location: westeurope
+  sport-planer-infra:backend:
+    image: ghcr.io/planer/backend:staging
+    cpu: 0.5
+    memory: 1Gi
+    minReplicas: 1
+    maxReplicas: 3
+  sport-planer-infra:keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    cpu: 0.5
+    memory: 1Gi
+    hostname: auth
+  sport-planer-infra:postgres:
+    sku: Standard_B1ms
+    storageGb: 32
+  sport-planer-infra:frontDoor:
+    originMode: lockedPublic
+    wafMode: Detection
+  sport-planer-infra:tags:
+    project: planer
+    environment: staging
+    managedBy: pulumi

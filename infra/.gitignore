@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build / TypeScript output
+dist/
+*.tsbuildinfo
+
+# Pulumi local state / secrets (never commit real secret material)
+Pulumi.*.local.yaml
+*.pulumi-secret
+
+# Environment / editor
+.env
+.env.*
+.DS_Store
+Thumbs.db

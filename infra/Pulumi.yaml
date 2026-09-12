@@ -1,0 +1,3 @@
+name: sport-planer-infra
+runtime: nodejs
+description: Pulumi IaC for the Planer Sport backend and Keycloak identity provider on Azure

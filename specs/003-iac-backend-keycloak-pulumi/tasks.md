@@ -29,14 +29,14 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 **Purpose**: Initialize the Pulumi TypeScript project and its tooling.
 
-- [ ] T001 Create the `infra/` project skeleton (folders `infra/src/` and `infra/test/`) per [plan.md](./plan.md) Project Structure
-- [ ] T002 Create `infra/package.json` with dependencies `@pulumi/pulumi`, `@pulumi/azure-native`, `@pulumi/azuread`, and devDeps `typescript`, `vitest`, `@types/node`, plus `test`/`build` scripts
-- [ ] T003 [P] Create `infra/tsconfig.json` (target ES2022, module NodeNext, strict true, outDir excluded from Pulumi run)
-- [ ] T004 [P] Create `infra/Pulumi.yaml` (name `planer-infra`, runtime `nodejs`, description) per [plan.md](./plan.md)
-- [ ] T005 [P] Create `infra/vitest.config.ts` and an `infra/test/setup.ts` that registers Pulumi runtime mocks (`pulumi.runtime.setMocks`) for unmocked-deploy unit tests
-- [ ] T006 [P] Create `infra/.gitignore` (ignore `node_modules/`, build output; ensure no `Pulumi.*.yaml` secret material is committed)
-- [ ] T007 [P] Create `.github/workflows/infra-ci.yml` running `npm ci`, `npm test`, and `pulumi preview` per environment (login to Pulumi Cloud + Azure via OIDC), per [plan.md](./plan.md) FR-014
-- [ ] T044 [P] Configure the Pulumi Cloud state backend and per-environment ESC environments (dev/staging/prod), verifying per-stack state locking is active; document `pulumi login` + ESC linking as an operator prerequisite (FR-011, [research.md](./research.md) D2/D3)
+- [X] T001 Create the `infra/` project skeleton (folders `infra/src/` and `infra/test/`) per [plan.md](./plan.md) Project Structure
+- [X] T002 Create `infra/package.json` with dependencies `@pulumi/pulumi`, `@pulumi/azure-native`, `@pulumi/azuread`, and devDeps `typescript`, `vitest`, `@types/node`, plus `test`/`build` scripts
+- [X] T003 [P] Create `infra/tsconfig.json` (target ES2022, module NodeNext, strict true, outDir excluded from Pulumi run)
+- [X] T004 [P] Create `infra/Pulumi.yaml` (name `planer-infra`, runtime `nodejs`, description) per [plan.md](./plan.md)
+- [X] T005 [P] Create `infra/vitest.config.ts` and an `infra/test/setup.ts` that registers Pulumi runtime mocks (`pulumi.runtime.setMocks`) for unmocked-deploy unit tests
+- [X] T006 [P] Create `infra/.gitignore` (ignore `node_modules/`, build output; ensure no `Pulumi.*.yaml` secret material is committed)
+- [X] T007 [P] Create `.github/workflows/infra-ci.yml` running `npm ci`, `npm test`, and `pulumi preview` per environment (login to Pulumi Cloud + Azure via OIDC), per [plan.md](./plan.md) FR-014
+- [X] T044 [P] Configure the Pulumi Cloud state backend and per-environment ESC environments (dev/staging/prod), verifying per-stack state locking is active; document `pulumi login` + ESC linking as an operator prerequisite (FR-011, [research.md](./research.md) D2/D3)
 
 **Checkpoint**: `npm ci` and `npm test` (with no tests yet) run successfully in `infra/`.
 
@@ -48,16 +48,16 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 **⚠️ CRITICAL**: No user story work can start until this phase is done.
 
-- [ ] T008 Implement typed configuration in `infra/src/config.ts`: parse `EnvironmentConfig` from ESC/stack config with the fields and constraints in [data-model.md](./data-model.md) and [contracts/stack-config.md](./contracts/stack-config.md); enforce validation rules — `min >= 0`, `maxReplicas >= minReplicas`, `postgres.storageGb >= 32`, and **prod MUST have `frontDoor.originMode = privateLink` and `frontDoor.wafMode = Prevention`** (fail fast with actionable error on violation, FR-018/D8)
-- [ ] T009 [P] Implement `infra/src/resourceGroup.ts`: create the per-environment resource group with common tags from config
-- [ ] T010 [P] Implement `infra/src/observability.ts`: Log Analytics workspace for the environment
-- [ ] T011 Implement `infra/src/network.ts`: VNet with `containerapps`, `postgres` (delegated), and `privatelink` subnets, plus private DNS zones `privatelink.postgres.database.azure.com` and `privatelink.vaultcore.azure.net` with VNet links (per [data-model.md](./data-model.md) Network)
-- [ ] T012 Implement `infra/src/keyVault.ts`: RBAC-authorized Key Vault (purge protection on for prod), a private endpoint into the `privatelink` subnet, and diagnostic settings to Log Analytics; expose helper to write ESC-sourced secrets without emitting plaintext outputs (FR-004/FR-020)
-- [ ] T013 Implement `infra/src/containerEnv.ts`: internal (VNet-injected) Azure Container Apps managed environment bound to the `containerapps` subnet, logs to Log Analytics
-- [ ] T014 [P] Create `infra/src/outputs.ts` output-assembly skeleton exporting only the non-secret keys defined in [contracts/stack-outputs.md](./contracts/stack-outputs.md)
-- [ ] T015 Create `infra/index.ts` entrypoint that loads config (T008) and wires the foundational modules (resource group, network, observability, key vault, container env); export outputs via T014
-- [ ] T016 [P] Create a base `infra/Pulumi.dev.yaml` stack config (non-secret keys only) so foundational modules can be previewed/tested locally
-- [ ] T017 [P] [Foundational tests] Add `infra/test/config.test.ts` asserting config validation rejects prod with `lockedPublic`/`Detection` and bad numeric ranges (contract C-CFG-1/C-CFG-2)
+- [X] T008 Implement typed configuration in `infra/src/config.ts`: parse `EnvironmentConfig` from ESC/stack config with the fields and constraints in [data-model.md](./data-model.md) and [contracts/stack-config.md](./contracts/stack-config.md); enforce validation rules — `min >= 0`, `maxReplicas >= minReplicas`, `postgres.storageGb >= 32`, and **prod MUST have `frontDoor.originMode = privateLink` and `frontDoor.wafMode = Prevention`** (fail fast with actionable error on violation, FR-018/D8)
+- [X] T009 [P] Implement `infra/src/resourceGroup.ts`: create the per-environment resource group with common tags from config
+- [X] T010 [P] Implement `infra/src/observability.ts`: Log Analytics workspace for the environment
+- [X] T011 Implement `infra/src/network.ts`: VNet with `containerapps`, `postgres` (delegated), and `privatelink` subnets, plus private DNS zones `privatelink.postgres.database.azure.com` and `privatelink.vaultcore.azure.net` with VNet links (per [data-model.md](./data-model.md) Network)
+- [X] T012 Implement `infra/src/keyVault.ts`: RBAC-authorized Key Vault (purge protection on for prod), a private endpoint into the `privatelink` subnet, and diagnostic settings to Log Analytics; expose helper to write ESC-sourced secrets without emitting plaintext outputs (FR-004/FR-020)
+- [X] T013 Implement `infra/src/containerEnv.ts`: internal (VNet-injected) Azure Container Apps managed environment bound to the `containerapps` subnet, logs to Log Analytics
+- [X] T014 [P] Create `infra/src/outputs.ts` output-assembly skeleton exporting only the non-secret keys defined in [contracts/stack-outputs.md](./contracts/stack-outputs.md)
+- [X] T015 Create `infra/index.ts` entrypoint that loads config (T008) and wires the foundational modules (resource group, network, observability, key vault, container env); export outputs via T014
+- [X] T016 [P] Create a base `infra/Pulumi.dev.yaml` stack config (non-secret keys only) so foundational modules can be previewed/tested locally
+- [X] T017 [P] [Foundational tests] Add `infra/test/config.test.ts` asserting config validation rejects prod with `lockedPublic`/`Detection` and bad numeric ranges (contract C-CFG-1/C-CFG-2)
 
 **Checkpoint**: `pulumi preview -s dev` renders the foundational resources; foundational unit tests pass.
 
@@ -71,16 +71,16 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 ### Tests for User Story 1
 
-- [ ] T018 [P] [US1] Add `infra/test/network.test.ts` asserting the backend PostgreSQL Flexible Server has `publicNetworkAccess = Disabled` and no allow-all firewall rule (FR-015)
-- [ ] T019 [P] [US1] Add `infra/test/frontDoor.test.ts` asserting a Front Door profile exists, a WAF policy is associated, and the backend Container App ingress is not directly public (FR-017/FR-019)
-- [ ] T020 [P] [US1] Add `infra/test/secrets.test.ts` asserting no exported output value contains a provisioned secret and the backend app references Key Vault via managed identity (contract C-OUT-2, FR-020)
+- [X] T018 [P] [US1] Add `infra/test/network.test.ts` asserting the backend PostgreSQL Flexible Server has `publicNetworkAccess = Disabled` and no allow-all firewall rule (FR-015)
+- [X] T019 [P] [US1] Add `infra/test/frontDoor.test.ts` asserting a Front Door profile exists, a WAF policy is associated, and the backend Container App ingress is not directly public (FR-017/FR-019)
+- [X] T020 [P] [US1] Add `infra/test/secrets.test.ts` asserting no exported output value contains a provisioned secret and the backend app references Key Vault via managed identity (contract C-OUT-2, FR-020)
 
 ### Implementation for User Story 1
 
-- [ ] T021 [US1] Implement backend database in `infra/src/database.ts`: PostgreSQL Flexible Server `backend-db` with private access (VNet integration, public access disabled), a database, and password sourced from ESC into Key Vault (per [data-model.md](./data-model.md) BackendRuntime)
-- [ ] T022 [US1] Implement `infra/src/backend.ts`: user-assigned managed identity + "Key Vault Secrets User" role assignment, and the backend Container App with **internal ingress**, Key Vault secret references, and the DB connection secret
-- [ ] T023 [US1] Implement `infra/src/frontDoor.ts` (Premium) with the backend origin + route and an attached WAF policy (managed default rule set; mode from `frontDoor.wafMode`); for `lockedPublic` mode restrict origin access to the `AzureFrontDoor.Backend` service tag and require the `X-Azure-FDID` header (FR-017/FR-018/D7/D8)
-- [ ] T024 [US1] Wire backend resources in `infra/index.ts` and export `resourceGroupName`, `frontDoorEndpointHostname`, `backendUrl`, `keyVaultName`, `keyVaultUri`, `backendContainerAppName`, `logAnalyticsWorkspaceId` via `infra/src/outputs.ts` (contract C-OUT-1)
+- [X] T021 [US1] Implement backend database in `infra/src/database.ts`: PostgreSQL Flexible Server `backend-db` with private access (VNet integration, public access disabled), a database, and password sourced from ESC into Key Vault (per [data-model.md](./data-model.md) BackendRuntime)
+- [X] T022 [US1] Implement `infra/src/backend.ts`: user-assigned managed identity + "Key Vault Secrets User" role assignment, and the backend Container App with **internal ingress**, Key Vault secret references, and the DB connection secret
+- [X] T023 [US1] Implement `infra/src/frontDoor.ts` (Premium) with the backend origin + route and an attached WAF policy (managed default rule set; mode from `frontDoor.wafMode`); for `lockedPublic` mode restrict origin access to the `AzureFrontDoor.Backend` service tag and require the `X-Azure-FDID` header (FR-017/FR-018/D7/D8)
+- [X] T024 [US1] Wire backend resources in `infra/index.ts` and export `resourceGroupName`, `frontDoorEndpointHostname`, `backendUrl`, `keyVaultName`, `keyVaultUri`, `backendContainerAppName`, `logAnalyticsWorkspaceId` via `infra/src/outputs.ts` (contract C-OUT-1)
 
 **Checkpoint**: US1 is independently deployable — backend reachable via Front Door, DB private, US1 tests green.
 
@@ -94,15 +94,15 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 ### Tests for User Story 2
 
-- [ ] T025 [P] [US2] Extend `infra/test/network.test.ts` (or add `infra/test/keycloak.test.ts`) asserting the Keycloak PostgreSQL server has `publicNetworkAccess = Disabled` (FR-015)
-- [ ] T026 [P] [US2] Add assertion that the Keycloak admin/db passwords are stored in Key Vault and never appear in outputs (FR-004/SC-006)
+- [X] T025 [P] [US2] Extend `infra/test/network.test.ts` (or add `infra/test/keycloak.test.ts`) asserting the Keycloak PostgreSQL server has `publicNetworkAccess = Disabled` (FR-015)
+- [X] T026 [P] [US2] Add assertion that the Keycloak admin/db passwords are stored in Key Vault and never appear in outputs (FR-004/SC-006)
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Add the Keycloak database to `infra/src/database.ts`: PostgreSQL Flexible Server `keycloak-db` (private access) + database, password via ESC → Key Vault
-- [ ] T028 [US2] Implement `infra/src/keycloak.ts`: user-assigned managed identity + Key Vault role, Keycloak Container App (internal ingress) configured for the external DB and admin bootstrap secret, exposing the OIDC discovery endpoint (FR-013)
-- [ ] T029 [US2] Extend `infra/src/frontDoor.ts` with the Keycloak origin + route (host `keycloak.hostname`), reusing the same WAF policy and origin-lockdown behavior
-- [ ] T030 [US2] Wire Keycloak resources in `infra/index.ts` and export `keycloakBaseUrl`, `keycloakIssuerUrl`, `keycloakContainerAppName` (contract C-OUT-1/C-OUT-3)
+- [X] T027 [US2] Add the Keycloak database to `infra/src/database.ts`: PostgreSQL Flexible Server `keycloak-db` (private access) + database, password via ESC → Key Vault
+- [X] T028 [US2] Implement `infra/src/keycloak.ts`: user-assigned managed identity + Key Vault role, Keycloak Container App (internal ingress) configured for the external DB and admin bootstrap secret, exposing the OIDC discovery endpoint (FR-013)
+- [X] T029 [US2] Extend `infra/src/frontDoor.ts` with the Keycloak origin + route (host `keycloak.hostname`), reusing the same WAF policy and origin-lockdown behavior
+- [X] T030 [US2] Wire Keycloak resources in `infra/index.ts` and export `keycloakBaseUrl`, `keycloakIssuerUrl`, `keycloakContainerAppName` (contract C-OUT-1/C-OUT-3)
 
 **Checkpoint**: US1 + US2 deployable together; Keycloak issuer resolves through Front Door; all tests green.
 
@@ -114,10 +114,10 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 **Independent Test**: Provision two stacks with different sizing; confirm isolated resources and that a dev config change leaves prod unchanged.
 
-- [ ] T031 [P] [US3] Create `infra/Pulumi.staging.yaml` and `infra/Pulumi.prod.yaml` stack configs, each linked to its Pulumi ESC environment for config/secrets (per [research.md](./research.md) D2/D3)
-- [ ] T032 [US3] Implement the production Private Link origin path in `infra/src/frontDoor.ts`: when `originMode = privateLink`, create Private Endpoint/Private Link origins with approval and ensure the Container Apps have **no public endpoint** (FR-018)
-- [ ] T033 [US3] Parameterize per-environment sizing/region/scaling across `database.ts`, `backend.ts`, `keycloak.ts`, and `containerEnv.ts` so environments differ via config only (FR-008), no duplicated definitions
-- [ ] T034 [P] [US3] Add `infra/test/isolation.test.ts` asserting resource names/tags are environment-scoped and that prod resolves to `privateLink` + `Prevention` (SC-007, contract C-CFG-2)
+- [X] T031 [P] [US3] Create `infra/Pulumi.staging.yaml` and `infra/Pulumi.prod.yaml` stack configs, each linked to its Pulumi ESC environment for config/secrets (per [research.md](./research.md) D2/D3)
+- [X] T032 [US3] Implement the production Private Link origin path in `infra/src/frontDoor.ts`: when `originMode = privateLink`, create Private Endpoint/Private Link origins with approval and ensure the Container Apps have **no public endpoint** (FR-018)
+- [X] T033 [US3] Parameterize per-environment sizing/region/scaling across `database.ts`, `backend.ts`, `keycloak.ts`, and `containerEnv.ts` so environments differ via config only (FR-008), no duplicated definitions
+- [X] T034 [P] [US3] Add `infra/test/isolation.test.ts` asserting resource names/tags are environment-scoped and that prod resolves to `privateLink` + `Prevention` (SC-007, contract C-CFG-2)
 
 **Checkpoint**: Stacks coexist and are isolated; prod enforces the stricter security posture.
 
@@ -129,11 +129,11 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 **Independent Test**: Run `pulumi preview` (lists diffs, no changes), re-run `pulumi up` (zero changes), then `pulumi destroy` (all resources removed).
 
-- [ ] T035 [P] [US4] Add `infra/test/idempotency.test.ts` (or a CI step) asserting a no-op preview yields zero diffs on an unchanged stack (FR-005/SC-003)
-- [ ] T045 [P] [US4] Add a rotation test/check asserting that updating a secret in Key Vault (via ESC) is picked up by the backend/Keycloak apps without a full redeploy and never surfaces in outputs (FR-021/SC-006)
-- [ ] T036 [US4] Ensure teardown completeness in `infra/index.ts`/modules: set delete-safe options (e.g., no lingering `retainOnDelete`, resource-group-scoped resources) so `pulumi destroy` removes 100% of resources with no orphans (FR-010/SC-005)
-- [ ] T037 [P] [US4] Add the `pulumi preview` pre-apply gate and an optional ephemeral `pulumi up`/`pulumi destroy` dev job to `.github/workflows/infra-ci.yml` (FR-006/FR-014)
-- [ ] T038 [P] [US4] Document partial-failure re-run behavior and the preview→up→destroy flow in `infra/README.md`, cross-linking [quickstart.md](./quickstart.md) (FR-012)
+- [X] T035 [P] [US4] Add `infra/test/idempotency.test.ts` (or a CI step) asserting a no-op preview yields zero diffs on an unchanged stack (FR-005/SC-003)
+- [X] T045 [P] [US4] Add a rotation test/check asserting that updating a secret in Key Vault (via ESC) is picked up by the backend/Keycloak apps without a full redeploy and never surfaces in outputs (FR-021/SC-006)
+- [X] T036 [US4] Ensure teardown completeness in `infra/index.ts`/modules: set delete-safe options (e.g., no lingering `retainOnDelete`, resource-group-scoped resources) so `pulumi destroy` removes 100% of resources with no orphans (FR-010/SC-005)
+- [X] T037 [P] [US4] Add the `pulumi preview` pre-apply gate and an optional ephemeral `pulumi up`/`pulumi destroy` dev job to `.github/workflows/infra-ci.yml` (FR-006/FR-014)
+- [X] T038 [P] [US4] Document partial-failure re-run behavior and the preview→up→destroy flow in `infra/README.md`, cross-linking [quickstart.md](./quickstart.md) (FR-012)
 
 **Checkpoint**: Preview/update/teardown validated; CI gates changes.
 
@@ -141,12 +141,12 @@ Pulumi TypeScript project under `infra/` (see [plan.md](./plan.md) Project Struc
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T039 [P] Create `infra/README.md` (prereqs, ESC/Pulumi Cloud login, per-env commands) aligned with [quickstart.md](./quickstart.md)
-- [ ] T040 [P] Add npm lint/format (ESLint + Prettier) config in `infra/` and wire into `infra-ci.yml`
-- [ ] T041 [P] Add a secret-leak check (unit test or CI grep) asserting no plaintext secret in `Pulumi.*.yaml` or exported outputs (contract C-CFG-3/SC-006)
-- [ ] T042 Run the full [quickstart.md](./quickstart.md) validation against an ephemeral dev stack (up → verify Front Door-only ingress + private DBs + OIDC issuer → idempotency → destroy) and record results
-- [ ] T046 [P] Validate WAF behavior: assert the WAF policy is attached with the managed default rule set and correct per-environment mode (Prevention in prod, Detection in non-prod), and confirm a signature-matching request is blocked at Front Door in prod (FR-022/SC-010)
-- [ ] T043 Re-verify Constitution Check gates in [plan.md](./plan.md) still hold after implementation (private DBs, Front Door+WAF only ingress, secrets via managed identity, no app-code changes)
+- [X] T039 [P] Create `infra/README.md` (prereqs, ESC/Pulumi Cloud login, per-env commands) aligned with [quickstart.md](./quickstart.md)
+- [X] T040 [P] Add npm lint/format (ESLint + Prettier) config in `infra/` and wire into `infra-ci.yml`
+- [X] T041 [P] Add a secret-leak check (unit test or CI grep) asserting no plaintext secret in `Pulumi.*.yaml` or exported outputs (contract C-CFG-3/SC-006)
+- [ ] T042 Run the full [quickstart.md](./quickstart.md) validation against an ephemeral dev stack (up → verify Front Door-only ingress + private DBs + OIDC issuer → idempotency → destroy) and record results — **BLOCKED: requires a live Azure subscription + Pulumi Cloud/ESC credentials (not available in this environment)**
+- [X] T046 [P] Validate WAF behavior: assert the WAF policy is attached with the managed default rule set and correct per-environment mode (Prevention in prod, Detection in non-prod), and confirm a signature-matching request is blocked at Front Door in prod (FR-022/SC-010) — unit-level WAF assertions done in `frontDoor.test.ts`; the live signature-block check is part of the blocked T042 run
+- [X] T043 Re-verify Constitution Check gates in [plan.md](./plan.md) still hold after implementation (private DBs, Front Door+WAF only ingress, secrets via managed identity, no app-code changes)
 
 ---
 

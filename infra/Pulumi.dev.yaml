@@ -1,0 +1,30 @@
+# Dev stack configuration.
+# Secrets (backend:dbPassword, keycloak:dbPassword, keycloak:adminPassword) are NOT
+# stored here — they are supplied by the linked Pulumi ESC environment below, or via
+# `pulumi config set --secret`.
+environment:
+#  - sport-planer-infra-dev # Pulumi ESC environment (config + secrets)
+config:
+  sport-planer-infra:environment: dev
+  sport-planer-infra:location: westeurope
+  sport-planer-infra:backend:
+    image: ghcr.io/planer/backend:dev
+    cpu: 0.5
+    memory: 1Gi
+    minReplicas: 1
+    maxReplicas: 3
+  sport-planer-infra:keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    cpu: 0.5
+    memory: 1Gi
+    hostname: auth
+  sport-planer-infra:postgres:
+    sku: Standard_B1ms
+    storageGb: 32
+  sport-planer-infra:frontDoor:
+    originMode: lockedPublic
+    wafMode: Detection
+  sport-planer-infra:tags:
+    project: planer
+    environment: dev
+    managedBy: pulumi
