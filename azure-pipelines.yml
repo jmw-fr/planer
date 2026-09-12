@@ -1,0 +1,73 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+  - job: Backend
+    displayName: "Backend (Rust)"
+    steps:
+      - checkout: self
+      - script: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+          echo "##vso[task.prependpath]$HOME/.cargo/bin"
+        displayName: "Install Rust toolchain"
+      - script: |
+          source "$HOME/.cargo/env"
+          rustup component add rustfmt clippy
+          bash scripts/ci/backend-checks.sh
+        displayName: "Run backend checks (fmt, clippy, build, test)"
+      - script: |
+          source "$HOME/.cargo/env"
+          cargo install cargo-audit --locked || true
+          (cd rust-flutter/backend && cargo audit)
+        displayName: "cargo audit"
+      - script: |
+          source "$HOME/.cargo/env"
+          cargo install cargo-deny --locked || true
+          (cd rust-flutter/backend && cargo deny check)
+        displayName: "cargo deny (non-blocking)"
+        continueOnError: true
+
+  - job: Frontend
+    displayName: "Frontend (Flutter)"
+    steps:
+      - checkout: self
+      - task: FlutterInstall@0
+        inputs:
+          channel: "stable"
+        displayName: "Install Flutter"
+      - script: |
+          dart pub global activate melos
+          export PATH="$PATH:$HOME/.pub-cache/bin"
+          bash scripts/ci/frontend-checks.sh
+        displayName: "Run frontend checks (analyze, format, test)"
+
+  - job: BackendDocker
+    displayName: "Backend Docker image smoke test"
+    dependsOn: Backend
+    steps:
+      - checkout: self
+      - script: |
+          docker build -t planersport-backend:ci rust-flutter/backend
+          docker run -d --name backend-smoke -p 8080:8080 \
+            -e DATABASE_URL=postgres://invalid:invalid@localhost:5432/invalid \
+            -e PORT=8080 \
+            planersport-backend:ci
+          for i in $(seq 1 10); do
+            if curl -sf http://localhost:8080/health -o /dev/null; then
+              echo "health check responded"; exit 0
+            fi
+            sleep 2
+          done
+          docker logs backend-smoke
+          exit 1
+        displayName: "Build image, run container, smoke-test /health"
